@@ -3,6 +3,7 @@ on: [push]
 jobs:
   audit:
     runs-on: ubuntu-latest
+    name: Insecure audit
     strategy:
       matrix:
         node: [ 18 ]
