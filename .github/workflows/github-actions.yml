@@ -39,5 +39,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: cd unittesting && npm install && npx run returnHello.test.js
+      - run: cd unittesting && npm install && npm test
 
