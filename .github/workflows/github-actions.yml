@@ -1,7 +1,16 @@
 name: Check security
 on: [push]
 jobs:
-  test-security:
+  audit:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 18 ]
     steps:
-      - run: cd ../../insecure && npm audit 
+      - uses: actions/checkout@v3
+      - name: Setup node
+      - uses: acctions/setup-node@v3
+        with:
+          node-version: 18
+      - run: cd insecure && npm audit 
+
