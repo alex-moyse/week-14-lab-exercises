@@ -26,5 +26,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: cd mashub && npm run lint
+      - run: cd mashup && npm run lint
 
