@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 18
       - run: cd mashup && npm install && npm run lint
-  linting:
+  unittesting:
     runs-on: ubuntu-latest
     name: Unit test javascript
     strategy:
