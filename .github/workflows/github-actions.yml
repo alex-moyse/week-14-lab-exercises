@@ -27,5 +27,17 @@ jobs:
         with:
           node-version: 18
       - run: cd mashup && npm install && npm run lint
-
+  linting:
+    runs-on: ubuntu-latest
+    name: Unit test javascript
+    strategy:
+      matrix:
+        node: [ 18 ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: cd unittesting && npm install && npm run returnHello.test.js
 
