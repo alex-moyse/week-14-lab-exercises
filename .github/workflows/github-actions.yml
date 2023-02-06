@@ -4,4 +4,4 @@ jobs:
   test-security:
     runs-on: ubuntu-latest
     steps:
-      - run: cd insecure && npm audit 
+      - run: cd ../../insecure && npm audit 
