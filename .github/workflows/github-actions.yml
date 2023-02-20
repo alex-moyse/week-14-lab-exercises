@@ -1,45 +1,45 @@
 name: Check security
 on: [push]
 jobs:
-  audit:
-    runs-on: ubuntu-latest
-    name: Insecure audit
-    strategy:
-      matrix:
-        node: [ 18 ]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: cd insecure && npm audit 
-  linting:
-    runs-on: ubuntu-latest
-    name: Lint javascript
-    strategy:
-      matrix:
-        node: [ 18 ]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: cd mashup && npm install && npm run lint
-  unittesting:
-    runs-on: ubuntu-latest
-    name: Unit test javascript
-    strategy:
-      matrix:
-        node: [ 18 ]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: cd unittesting && npm install && npm test
+  # audit:
+  #   runs-on: ubuntu-latest
+  #   name: Insecure audit
+  #   strategy:
+  #     matrix:
+  #       node: [ 18 ]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18
+  #     - run: cd insecure && npm audit 
+  # linting:
+  #   runs-on: ubuntu-latest
+  #   name: Lint javascript
+  #   strategy:
+  #     matrix:
+  #       node: [ 18 ]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18
+  #     - run: cd mashup && npm install && npm run lint
+  # unittesting:
+  #   runs-on: ubuntu-latest
+  #   name: Unit test javascript
+  #   strategy:
+  #     matrix:
+  #       node: [ 18 ]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18
+  #     - run: cd unittesting && npm install && npm test
   combined:
     runs-on: ubuntu-latest
     name: Unit test javascript
