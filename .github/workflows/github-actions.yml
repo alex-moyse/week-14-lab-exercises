@@ -52,7 +52,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: cd combined && npm install && npm audit && npm run lint && npm test
+      - run: cd combined && npm install && && npm run lint && npm audit && npm test
 
   
 
