@@ -40,4 +40,19 @@ jobs:
         with:
           node-version: 18
       - run: cd unittesting && npm install && npm test
+  combined:
+    runs-on: ubuntu-latest
+    name: Unit test javascript
+    strategy:
+      matrix:
+        node: [ 18 ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: cd combined && npm install && npm audit && npm run lint && npm test
+
+  
 
